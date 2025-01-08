@@ -10,9 +10,7 @@ public class Triangle {
             return String.format("Треугольник a = %s, b = %s, c = %s - равносторонний треугольник", a, b, c);
         }
 
-        if (a == b && a + b > c ||
-                a == c && a + c > b
-                || b == c && b + c > a)
+        if (a == b || a == c || b == c)
             return String.format("Треугольник a = %s, b = %s, c = %s - равнобедренный треугольник", a, b, c);
 
         if (a * a == b * b + c * c ||
@@ -22,13 +20,5 @@ public class Triangle {
         } else {
             return String.format("Треугольник a = %s, b = %s, c = %s - обычный треугольник", a, b, c);
         }
-
-        /*if (a + b > c &&
-                a + c > b &&
-                c + b > a) {
-            return String.format("Треугольник a = %s, b = %s, c = %s - обычный треугольник", a, b, c);
-        } else {
-            return String.format("Треугольник a = %s, b = %s, c = %s не является треугольником", a, b, c);
-        }*/
     }
 }
