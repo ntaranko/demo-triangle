@@ -2,6 +2,49 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 public class TriangleTest {
+
+    @Test
+    public void testDefineNotExistingTriangle1(){
+        String actualResult = Triangle.defineTriangle(2, 3, 6);
+        boolean typeExists = actualResult.indexOf("не является") > 0;
+        Assertions.assertTrue(typeExists);
+    }
+
+    @Test
+    public void testDefineNotExistingTriangle2(){
+        String actualResult = Triangle.defineTriangle(3, 6, 2);
+        boolean typeExists = actualResult.indexOf("не является") > 0;
+        Assertions.assertTrue(typeExists);
+    }
+
+    @Test
+    public void testDefineNotExistingTriangle3(){
+        String actualResult = Triangle.defineTriangle(6, 3, 2);
+        boolean typeExists = actualResult.indexOf("не является") > 0;
+        Assertions.assertTrue(typeExists);
+    }
+
+    @Test
+    public void testDefineNotExistingTriangle4(){
+        String actualResult = Triangle.defineTriangle(-6, -5, -1);
+        boolean typeExists = actualResult.indexOf("не является") > 0;
+        Assertions.assertTrue(typeExists);
+    }
+
+    @Test
+    public void testDefineNotExistingTriangle5(){
+        String actualResult = Triangle.defineTriangle(0, 0, 0);
+        boolean typeExists = actualResult.indexOf("не является") > 0;
+        Assertions.assertTrue(typeExists);
+    }
+
+    @Test
+    public void testDefineNotExistingTriangle6(){
+        String actualResult = Triangle.defineTriangle(Integer.MAX_VALUE, Integer.MAX_VALUE, Integer.MAX_VALUE);
+        boolean typeExists = actualResult.indexOf("не является") > 0;
+        Assertions.assertTrue(typeExists);
+    }
+
     @Test
     public void testDefineTriangleWithEqualSides(){
         String actualResult = Triangle.defineTriangle(2, 2, 2);
@@ -69,27 +112,6 @@ public class TriangleTest {
     public void testDefineAnyTriangle3(){
         String actualResult = Triangle.defineTriangle(12, 11, 10);
         boolean typeExists = actualResult.indexOf("обычный") > 0;
-        Assertions.assertTrue(typeExists);
-    }
-
-    @Test
-    public void testDefineNotExistingTriangle1(){
-        String actualResult = Triangle.defineTriangle(2, 3, 6);
-        boolean typeExists = actualResult.indexOf("не является") > 0;
-        Assertions.assertTrue(typeExists);
-    }
-
-    @Test
-    public void testDefineNotExistingTriangle2(){
-        String actualResult = Triangle.defineTriangle(3, 6, 2);
-        boolean typeExists = actualResult.indexOf("не является") > 0;
-        Assertions.assertTrue(typeExists);
-    }
-
-    @Test
-    public void testDefineNotExistingTriangle3(){
-        String actualResult = Triangle.defineTriangle(6, 3, 2);
-        boolean typeExists = actualResult.indexOf("не является") > 0;
         Assertions.assertTrue(typeExists);
     }
 }
